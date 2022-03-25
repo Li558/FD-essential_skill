@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h2 class=""page-header">基本使用</h2>
+    <button class="btn btn-primary">GET请求</button>
+    <button class="btn btn-warning">POST请求</button>
+    <button class="btn btn-success">PUT请求</button>
+    <button class="btn btn-danger">DELETE请求</button>
+  </div>
+
+  <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+  <script>
+    //获取按钮
+    const btns = document.querySelectorAll('button');
+
+    //第一个
+    btns[0].onclick = () =>{
+        //发送AJAX请求
+        axios({
+            //请求类型
+            method: 'GET',
+            //URL
+            url:'http://localhost:3000/posts/2',
+        }).then(response=>{
+            console.log(response);
+        })
+    }
+    //添加一篇新的文章
+    btns[1].onclick = () =>{
+        //发送AJAX请求
+        axios({
+            //请求类型
+            method: 'POST',
+            //URL
+            url:'http://localhost:3000/posts',
+            data:{
+                title: "sadwad",
+                author: "占山"
+            }
+        }).then(response=>{
+            console.log(response);
+        })
+    }
+    //更新数据
+    btns[2].onclick = () =>{
+        //发送AJAX请求
+        axios({
+            //请求类型
+            method: 'PUT',
+            //URL
+            url:'http://localhost:3000/posts/3',
+            data:{
+                title: "文章",
+                author: "李四"
+            }
+        }).then(response=>{
+            console.log(response);
+        })
+    }
+
+    //删除数据
+    btns[3].onclick = () =>{
+        //发送AJAX请求
+        axios({
+            //请求类型
+            method: 'delete',
+            //URL
+            url:'http://localhost:3000/posts/3',
+        }).then(response=>{
+            console.log(response);
+        })
+    }
+      /* 1. GET请求: 从服务器端获取数据*/
+   
+
+  </script>
+</body>
+</html>
