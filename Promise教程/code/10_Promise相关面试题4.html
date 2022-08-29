@@ -18,6 +18,8 @@
         setTimeout(() => {
             console.log("0")
         }, 0)
+
+        
         new Promise((resolve, reject) => {
             console.log("1")
             resolve()
@@ -34,6 +36,8 @@
         }).then(() => {
             console.log("6")
         })
+
+
         new Promise((resolve, reject) => {
             console.log("7")
             resolve()
